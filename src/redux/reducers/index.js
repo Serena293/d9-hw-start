@@ -2,7 +2,13 @@
 // salva qui le propità iniziali, altrimenti risulta 'undefined'
 // }
 
-const mainReducer = (state, action)  => {
+const initialState = {
+  favoite: {
+    books: []
+  }
+}
+//assegniamo initialState come default
+const mainReducer = (state={initialState}, action)  => {
   switch (action.type)
   {default: return state}
 }

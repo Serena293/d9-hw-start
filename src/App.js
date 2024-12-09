@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MainSearch from "./components/MainSearch";
+import FavoriteCompanies from "./components/FavoriteCompanies";
 import CompanySearchResults from "./components/CompanySearchResults";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { useSelector, useDispatch } from "react-redux";
@@ -17,6 +18,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //dobbiamo inclurede nello switch nella funzione mainReducer
 //payload:   <-- info aggiuntiva di dispatch
 //})}}
+
+
+
 function App() {
   
   return (
@@ -24,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainSearch />} />
         <Route path="/:company" element={<CompanySearchResults />} />
+        <Route path="/favourites" element={<FavoriteCompanies/>} />
       </Routes>
     </BrowserRouter>
   );
