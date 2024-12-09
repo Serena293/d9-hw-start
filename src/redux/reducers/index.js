@@ -3,7 +3,7 @@
 // }
 
 const initialState = {
-  favoite: {
+  favoites: {
     books: []
   }
 }
