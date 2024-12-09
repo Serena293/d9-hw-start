@@ -1,5 +1,7 @@
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 const Job = ({ data }) => (
   <Row
@@ -9,10 +11,13 @@ const Job = ({ data }) => (
     <Col xs={3}>
       <Link to={`/${data.company_name}`}>{data.company_name}</Link>
     </Col>
-    <Col xs={9}>
+    <Col xs={6}>
       <a href={data.url} target="_blank" rel="noreferrer">
         {data.title}
       </a>
+    </Col>
+    <Col>
+    <i class="bi bi-bookmark-heart"></i>
     </Col>
   </Row>
 )
