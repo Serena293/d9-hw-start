@@ -3,13 +3,35 @@
 // }
 
 const initialState = {
-  favoites: {
-    books: []
+  favorites: {
+    books: [], // Store the favorite companies here
+  },
+};
+
+// Reducer function
+const mainReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "ADD_TO_FAVORITES":
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          books: [...state.favorites.books, action.payload],
+        },
+      };
+    case "REMOVE_FROM_FAVORITES":
+      return {
+        ...state,
+        favorites: {
+          ...state.favorites,
+          books: state.favorites.books.filter(
+            (book) => book !== action.payload
+          ),
+        },
+      };
+    default:
+      return state;
   }
-}
-//assegniamo initialState come default
-const mainReducer = (state={initialState}, action)  => {
-  switch (action.type)
-  {default: return state}
-}
-export default mainReducer
+};
+
+export default mainReducer;
